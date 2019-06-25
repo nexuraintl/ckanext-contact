@@ -45,22 +45,24 @@ class ContactController(toolkit.BaseController):
     @staticmethod
     def _submit(context):
 
+        errors = {}
+        error_summary = {}
+
         try:
             data_dict = \
                 logic.clean_dict(unflatten(logic.tuplize_dict(
-                                           logic.parse_params(
-                                            toolkit.request.params))))
+                    logic.parse_params(
+                        toolkit.request.params))))
             context['message'] = data_dict.get('log_message', '')
             toolkit.c.form = data_dict['name']
             captcha.check_recaptcha(toolkit.request)
         except logic.NotAuthorized:
             abort(401, toolkit._('Not authorized to see this page'))
         except captcha.CaptchaError:
-            error_msg = toolkit._(u'Bad Captcha. Please try again.')
-            toolkit.h.flash_error(error_msg)
-
-        errors = {}
-        error_summary = {}
+            #error_msg = toolkit._(u'Bad Captcha. Please try again.')
+            #toolkit.h.flash_error(error_msg)
+            errors['captcha'] = [u'Bad Captcha']
+            error_summary['captcha'] = u'Bad Captcha. Please try again.'
 
         if data_dict["email"] == '':
             errors['email'] = [u'Missing Value']
@@ -76,14 +78,21 @@ class ContactController(toolkit.BaseController):
 
         if len(errors) == 0:
 
+            recipient_email = config.get("ckanext.contact.mail_to",
+                                              config.get('email_to'))
+            recipient_name = config.get("ckanext.contact.recipient_name",
+                                             config.get('ckan.site_title'))
+
+            if "author_email" in data_dict:
+                recipient_email = data_dict["author_email"]
+                recipient_name = ''
+
             body = '%s' % data_dict["content"]
             body += '\n\nSent by:\nName:%s\nEmail: %s\n' % (data_dict["name"],
                                                             data_dict["email"])
             mail_dict = {
-                'recipient_email': config.get("ckanext.contact.mail_to",
-                                              config.get('email_to')),
-                'recipient_name': config.get("ckanext.contact.recipient_name",
-                                             config.get('ckan.site_title')),
+                'recipient_email': recipient_email,
+                'recipient_name': recipient_name,
                 'subject': config.get("ckanext.contact.subject",
                                       'Contact/Question from visitor'),
                 'body': body,
@@ -114,7 +123,8 @@ class ContactController(toolkit.BaseController):
                                       'error_summary': error_summary})
         toolkit.response.headers['Content-Type'] = \
             'application/json;charset=utf-8'
-        return toolkit.h.json.dumps(data)
+
+        return toolkit.h.dump_json(data)
 
     def form(self):
 

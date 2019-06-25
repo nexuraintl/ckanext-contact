@@ -9,6 +9,16 @@
 
         {% block contact_form_fields %}
 
+            {% if pkg %}
+            <div class="form-group">
+              <label for="field-author_email">{{ _('Author') }}</label>
+              <div class="input-group">
+                <div class="input-group-addon" style="text-align:left;">{{ pkg.author }}</div>
+                <input type="hidden" class="form-control" id="field-author_email" name="author_email" value={{ pkg.author_email }} >
+              </div>
+            </div>
+            {% endif %}
+
             {{ form.input('name', label=_('Contact Name'), id='field-name', value=data.name, error=errors.name, classes=['control-medium'], is_required=true) }}
 
             {{ form.input('email', label=_('Email'), id='field-email', type='email', value=data.email, error=errors.email, classes=['control-medium'], is_required=true) }}
