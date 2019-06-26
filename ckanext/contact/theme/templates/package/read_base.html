@@ -1,0 +1,8 @@
+{% ckan_extends %}
+
+{% block content_action %}
+  {{ super() }}
+  {% if pkg.author %}
+    {% snippet "contact/snippets/modal_link.html", pkg=pkg %}
+  {% endif %}
+{% endblock %}

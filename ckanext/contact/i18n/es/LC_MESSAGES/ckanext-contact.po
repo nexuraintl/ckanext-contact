@@ -1,0 +1,104 @@
+# Spanish translations for ckanext-contact.
+# Copyright (C) 2018 ORGANIZATION
+# This file is distributed under the same license as the ckanext-contact
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-contact 0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2018-10-23 13:41-0500\n"
+"PO-Revision-Date: 2018-10-23 13:41-0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ckanext/contact/controllers/contact.py:43
+msgid "Not authorized to use contact form"
+msgstr "No autorizado para utilizar el formulario de contacto."
+
+#: ckanext/contact/controllers/contact.py:57
+msgid "Not authorized to see this page"
+msgstr "No autorizado para ver esta página."
+
+#: ckanext/contact/controllers/contact.py:59
+msgid "Bad Captcha. Please try again."
+msgstr "Captcha incorrecto. Inténtalo de nuevo."
+
+#: ckanext/contact/controllers/contact.py:101
+msgid "Sorry, there was an error sending the email. Please try again later"
+msgstr "Lo sentimos, hubo un error al enviar el correo electrónico. Por favor, inténtelo de nuevo más tarde."
+
+#: ckanext/contact/theme/public/scripts/modules/modal-contact.js:18
+#: ckanext/contact/theme/public/scripts/modules/modal-contact.js:19
+msgid "Sorry, we could not load the contact form. Please try again later."
+msgstr "Lo sentimos, no pudimos cargar el formulario de contacto. Por favor, inténtelo de nuevo más tarde."
+
+#: ckanext/contact/theme/public/scripts/modules/modal-contact.js:20
+msgid ""
+"Thank you for contacting us, and we will try and reply as soon as "
+"possible.<br />Unfortunately due to the number of enquiries the Museum "
+"receives, we cannot always reply in person to every one."
+msgstr ""
+"Gracias por contactarnos, y trataremos de responder tan pronto como sea "
+"posible. <br />Lamentablemente debido a la cantidad de consultas "
+"recibidas, no siempre podemos responder en persona a cada uno."
+
+#: ckanext/contact/theme/public/scripts/modules/modal-contact.js:21
+msgid "Sorry, there was an error sending the email. Please try again later."
+msgstr "Lo sentimos, hubo un error al enviar el correo electrónico. Por favor, inténtelo de nuevo más tarde."
+
+#: ckanext/contact/theme/templates/contact/snippets/modal_link.html:3
+#: ckanext/contact/theme/templates/contact/snippets/modal_link.html:4
+#: ckanext/contact/theme/templates/header.html:5
+#: ckanext/contact/theme/templates/header.html:9
+msgid "Contact"
+msgstr "Contacto"
+
+#: ckanext/contact/theme/templates/ajax_snippets/contact_form.html:18
+msgid "Contact form"
+msgstr "Formulario de contacto"
+
+#: ckanext/contact/theme/templates/contact/form.html:26
+#: ckanext/contact/theme/templates/contact/success.html:18
+msgid "Contact Us"
+msgstr "Contáctenos"
+
+#: ckanext/contact/theme/templates/contact/snippets/form.html:12
+msgid "Contact Name"
+msgstr "Nombre de contacto"
+
+#: ckanext/contact/theme/templates/contact/snippets/form.html:14
+msgid "Email"
+msgstr "Dirección de correo electrónico"
+
+#: ckanext/contact/theme/templates/contact/snippets/form.html:16
+msgid "Your Request"
+msgstr "Tu petición"
+
+#: ckanext/contact/theme/templates/contact/snippets/form.html:16
+msgid "What do you have to tell us?"
+msgstr "¿Qué tienes que decirnos?"
+
+#: ckanext/contact/theme/templates/contact/snippets/form.html:29
+msgid "Submit"
+msgstr "Enviar"
+
+#: ckanext-contact/ckanext/contact/theme/templates/contact/form.html:30
+#: ckanext-contact/ckanext/contact/theme/templates/contact/success.html:22
+msgid "Questions? Comments? We are always glad to hear from you!"
+msgstr "Preguntas? ¿Comentarios? ¡Siempre nos alegra escuchar de ti!"
+
+#: ckanext-contact/ckanext/contact/theme/templates/contact/success.html:7
+msgid "Thank you!"
+msgstr "Gracias!"
+
+#: ckanext-contact/ckanext/contact/theme/templates/contact/success.html:8
+msgid "Your comment has been sent, we will answer you as soon as possible."
+msgstr "Su comentario ha sido enviado, le contestaremos lo antes posible."
